@@ -212,3 +212,19 @@
     animation: float 3s ease-in-out infinite;
   }
 }
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: white;
+  width: 42px;
+  height: 42px;
+  background: rgba(0,0,0,0.5);
+  border-radius: 999px;
+  backdrop-filter: blur(6px);
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-size: 16px;
+  font-weight: bold;
+}

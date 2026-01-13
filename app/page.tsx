@@ -8,6 +8,7 @@ import OfferSection from "@/components/sections/offer-section"
 import AboutSection from "@/components/sections/about-section"
 import BusinessGrid from "@/components/sections/business-grid"
 import Footer from "@/components/footer"
+import HeroSlider from "@/components/hero-slider"
 
 export default function Home() {
   const [isDark, setIsDark] = useState(false)
@@ -25,6 +26,7 @@ export default function Home() {
     <div className="min-h-screen bg-background text-foreground">
       <Navbar isDark={isDark} setIsDark={setIsDark} />
       <main>
+         <HeroSlider />
         <HeroSection />
         <VideoSection />
         <OfferSection />
