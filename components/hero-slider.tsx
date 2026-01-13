@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
+import "swiper/css/navigation";
 
 const banners = [
   "https://images.unsplash.com/photo-1507874457470-272b3c8d8ee2?auto=format&fit=crop&w=1600&q=80",
@@ -15,26 +16,31 @@ const banners = [
 
 export default function HeroSlider() {
   return (
-    <section className="pt-10 md:pt-7">
+    <section className="pt-6 mb-4">
       <div className="max-w-7xl mx-auto px-6">
-        <Swiper
-          modules={[Autoplay, Pagination, Navigation]}
-          autoplay={{ delay: 5000, disableOnInteraction: false }}
-          pagination={{ clickable: true }}
-          navigation
-          loop
-        >
-          {banners.map((img, i) => (
-            <SwiperSlide key={i}>
-              <div className="relative w-full h-[120px] sm:h-[180px] md:h-[240px] lg:h-[320px] rounded-2xl overflow-hidden shadow-lg">
-                <img
-                  src={img}
-                  className="w-full h-full object-cover hover:scale-105 transition duration-700"
-                />
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+        {/* Wrapper ini penting agar arrow terkunci ke slider */}
+        <div className="relative">
+          <Swiper
+            modules={[Autoplay, Pagination, Navigation]}
+            autoplay={{ delay: 5000, disableOnInteraction: false }}
+            pagination={{ clickable: true }}
+            navigation
+            loop
+            className="hero-swiper"
+          >
+            {banners.map((img, i) => (
+              <SwiperSlide key={i}>
+                <div className="w-full h-[120px] sm:h-[180px] md:h-[240px] lg:h-[320px] rounded-2xl overflow-hidden shadow-lg">
+                  <img
+                    src={img}
+                    className="w-full h-full object-cover hover:scale-105 transition duration-700"
+                    alt=""
+                  />
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
       </div>
     </section>
   );
