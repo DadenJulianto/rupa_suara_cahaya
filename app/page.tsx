@@ -26,10 +26,11 @@ export default function Home() {
     <div className="min-h-screen bg-background text-foreground">
       <Navbar isDark={isDark} setIsDark={setIsDark} />
       <main>
-         <HeroSlider />
-        <HeroSection />
-        <VideoSection />
+        <HeroSlider />
         <OfferSection />
+        {/* <HeroSection />
+        <VideoSection /> */}
+        
         <AboutSection />
         <BusinessGrid />
       </main>

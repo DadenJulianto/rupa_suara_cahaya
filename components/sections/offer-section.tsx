@@ -75,8 +75,8 @@ export default function OfferSection() {
                   </ul>
 
                   <div className="pt-6">
-                    <button className="px-8 py-3 rounded-full bg-gradient-to-r from-primary to-accent text-foreground font-semibold hover:shadow-xl hover:shadow-accent/40 transition-all duration-300 hover:scale-105">
-                      Pelajari Lebih Lanjut
+                    <button className="px-8 py-3 rounded-full bg-gradient-to-r from-primary to-accent text-foreground font-semibold hover:shadow-xl hover:shadow-accent/40 transition-all duration-300 hover:scale-105" >
+                     <a href="https://rupasuaracahaya.com/">halaman Kami</a>
                     </button>
                   </div>
 
