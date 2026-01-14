@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 
 interface Business {
   id: string;
@@ -95,11 +96,15 @@ export default function BusinessGrid() {
           >
             {/* Image */}
             <div className="relative h-28 sm:h-40 lg:h-48 overflow-hidden">
-              <img
+              <Image
                 src={business.image}
                 alt={business.name}
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                fill
+                className="object-cover transition-transform duration-700 group-hover:scale-110"
+                sizes="(max-width: 768px) 100vw, 33vw"
+                priority={business.id === "wedding-org"}
               />
+
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
             </div>
 
