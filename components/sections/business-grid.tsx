@@ -17,7 +17,7 @@ const businesses: Business[] = [
       "Layanan pernikahan lengkap dari perencanaan hingga eksekusi sempurna untuk hari istimewa Anda.",
     color: "from-pink-500/10 to-rose-500/10",
     accentColor: "from-pink-500 to-rose-500",
-    image: "/business/wedding.jpg",
+    image: "/logo/wo.png",
   },
   {
     id: "rupa-suara-cahaya",
@@ -26,7 +26,7 @@ const businesses: Business[] = [
       "Studio produksi audio-visual dengan peralatan terkini dan tim profesional berpengalaman.",
     color: "from-purple-500/10 to-indigo-500/10",
     accentColor: "from-purple-500 to-indigo-500",
-    image: "/business/rupa.jpg",
+    image: "/logo/rps.png",
   },
   {
     id: "kayu-pinus",
@@ -35,7 +35,7 @@ const businesses: Business[] = [
       "Distributor kayu pinus berkualitas dengan berbagai pilihan produk untuk kebutuhan konstruksi Anda.",
     color: "from-amber-500/10 to-orange-500/10",
     accentColor: "from-amber-500 to-orange-500",
-    image: "/business/kayu.jpg",
+    image: "/logo/kp.png",
   },
   {
     id: "pancarona",
@@ -44,7 +44,7 @@ const businesses: Business[] = [
       "Platform e-commerce terpadu yang menyediakan berbagai produk pilihan dengan kualitas terjamin.",
     color: "from-cyan-500/10 to-blue-500/10",
     accentColor: "from-cyan-500 to-blue-500",
-    image: "/business/pancarona.jpg",
+    image: "/logo/so.png",
   },
   {
     id: "rsctix",
@@ -62,7 +62,7 @@ const businesses: Business[] = [
       "Brand fashion yang menghadirkan gaya kontemporer dengan sentuhan lokal dan berkualitas premium.",
     color: "from-red-500/10 to-pink-500/10",
     accentColor: "from-red-500 to-pink-500",
-    image: "/business/harrum.jpg",
+    image: "/logo/hr.png",
   },
   {
     id: "talent",
