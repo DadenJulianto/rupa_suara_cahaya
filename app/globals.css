@@ -238,3 +238,6 @@
   font-size: 16px;
   font-weight: bold;
 }
+body {
+  padding-bottom: 100px;
+}

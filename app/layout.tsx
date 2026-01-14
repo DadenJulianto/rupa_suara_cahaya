@@ -5,6 +5,8 @@ import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 import "aos/dist/aos.css"
 import AOSProvider from "../components/aos-provider"
+import BottomNav from "../components/BottomNav"
+
 
 
 const _geist = Geist({ subsets: ["latin"] })
@@ -25,6 +27,7 @@ export default function RootLayout({
       <body className="font-sans antialiased">
         <AOSProvider />   {/* ← INI yang menyalakan animasi */}
         {children}
+        <BottomNav />
         <Analytics />
       </body>
     </html>
