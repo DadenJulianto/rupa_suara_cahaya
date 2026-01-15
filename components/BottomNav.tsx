@@ -24,6 +24,9 @@ const navItems: NavItem[] = [
 
 export default function BottomNav() {
   const pathname = usePathname();
+  const trackClick = (label: string) => {
+    console.log(`[TRACK] BottomNav Click: ${label}`);
+  };
 
   const handleClick = (item: NavItem) => {
     // Scroll ke atas
