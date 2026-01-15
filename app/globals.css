@@ -241,3 +241,8 @@
 body {
   padding-bottom: 100px;
 }
+@media (hover: none) {
+  .group:hover img {
+    transform: none !important;
+  }
+}

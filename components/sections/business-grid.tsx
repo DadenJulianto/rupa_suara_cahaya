@@ -1,4 +1,5 @@
 "use client";
+
 import Image from "next/image";
 
 interface Business {
@@ -18,7 +19,7 @@ const businesses: Business[] = [
       "Layanan pernikahan lengkap dari perencanaan hingga eksekusi sempurna untuk hari istimewa Anda.",
     color: "from-pink-500/10 to-rose-500/10",
     accentColor: "from-pink-500 to-rose-500",
-    image: "/logo/wo.png",
+    image: "/logo/",
   },
   {
     id: "rupa-suara-cahaya",
@@ -27,7 +28,7 @@ const businesses: Business[] = [
       "Studio produksi audio-visual dengan peralatan terkini dan tim profesional berpengalaman.",
     color: "from-purple-500/10 to-indigo-500/10",
     accentColor: "from-purple-500 to-indigo-500",
-    image: "/logo/rps.png",
+    image: "/logo/",
   },
   {
     id: "kayu-pinus",
@@ -36,7 +37,7 @@ const businesses: Business[] = [
       "Distributor kayu pinus berkualitas dengan berbagai pilihan produk untuk kebutuhan konstruksi Anda.",
     color: "from-amber-500/10 to-orange-500/10",
     accentColor: "from-amber-500 to-orange-500",
-    image: "/logo/kp.png",
+    image: "/logo/",
   },
   {
     id: "pancarona",
@@ -45,7 +46,7 @@ const businesses: Business[] = [
       "Platform e-commerce terpadu yang menyediakan berbagai produk pilihan dengan kualitas terjamin.",
     color: "from-cyan-500/10 to-blue-500/10",
     accentColor: "from-cyan-500 to-blue-500",
-    image: "/logo/so.png",
+    image: "/logo/s",
   },
   {
     id: "rsctix",
@@ -54,7 +55,7 @@ const businesses: Business[] = [
       "Sistem manajemen tiket digital untuk acara, konser, dan event dengan integrasi pembayaran lengkap.",
     color: "from-green-500/10 to-emerald-500/10",
     accentColor: "from-green-500 to-emerald-500",
-    image: "/business/rsctix.jpg",
+    image: "/business/",
   },
   {
     id: "harrum",
@@ -63,7 +64,7 @@ const businesses: Business[] = [
       "Brand fashion yang menghadirkan gaya kontemporer dengan sentuhan lokal dan berkualitas premium.",
     color: "from-red-500/10 to-pink-500/10",
     accentColor: "from-red-500 to-pink-500",
-    image: "/logo/hr.png",
+    image: "/logo/",
   },
   {
     id: "talent",
@@ -72,7 +73,7 @@ const businesses: Business[] = [
       "Agensi talenta yang menghubungkan artis profesional dengan peluang pertunjukan terbaik.",
     color: "from-yellow-500/10 to-amber-500/10",
     accentColor: "from-yellow-500 to-amber-500",
-    image: "/business/talent.jpg",
+    image: "/business/",
   },
 ];
 
@@ -88,11 +89,12 @@ export default function BusinessGrid() {
           fokus bisnis yang berbeda.
         </p>
       </div>
+
       <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6">
-        {businesses.map((business) => (
+        {businesses.map((business, index) => (
           <div
             key={business.id}
-            className="group bg-card rounded-3xl border border-white/10 overflow-hidden hover:shadow-xl hover:shadow-accent/20 transition-all duration-500"
+            className="relative group bg-card rounded-3xl border border-white/10 overflow-hidden hover:shadow-lg transition-shadow duration-300"
           >
             {/* Image */}
             <div className="relative h-28 sm:h-40 lg:h-48 overflow-hidden">
@@ -100,12 +102,15 @@ export default function BusinessGrid() {
                 src={business.image}
                 alt={business.name}
                 fill
+                sizes="(max-width: 768px) 50vw, 33vw"
+                loading={index < 4 ? "eager" : "lazy"}
+                priority={index < 4}
+                placeholder="blur"
+                blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0nMTAnIGhlaWdodD0nMTAnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zyc+PC9zdmc+"
                 className="object-cover transition-transform duration-700 group-hover:scale-110"
-                sizes="(max-width: 768px) 100vw, 33vw"
-                priority={business.id === "wedding-org"}
               />
+<div className="absolute inset-0 bg-black/40" />
 
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
             </div>
 
             {/* Content */}
@@ -134,9 +139,7 @@ export default function BusinessGrid() {
             </div>
 
             {/* Accent glow */}
-            <div
-              className={`absolute inset-0 rounded-3xl bg-gradient-to-br ${business.accentColor} opacity-0 group-hover:opacity-[0.08] transition pointer-events-none`}
-            />
+            <div className="pointer-events-none absolute inset-0 rounded-3xl ring-1 ring-white/10 opacity-0 group-hover:opacity-100 transition" />
           </div>
         ))}
       </div>

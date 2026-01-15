@@ -1,26 +1,26 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import Navbar from "@/components/navbar"
-import HeroSection from "@/components/sections/hero-section"
-import VideoSection from "@/components/sections/video-section"
-import OfferSection from "@/components/sections/offer-section"
-import AboutSection from "@/components/sections/about-section"
-import BusinessGrid from "@/components/sections/business-grid"
-import Footer from "@/components/footer"
-import HeroSlider from "@/components/hero-slider"
+import { useState, useEffect } from "react";
+import Navbar from "@/components/navbar";
+import HeroSection from "@/components/sections/hero-section";
+import VideoSection from "@/components/sections/video-section";
+import OfferSection from "@/components/sections/offer-section";
+import AboutSection from "@/components/sections/about-section";
+import BusinessGrid from "@/components/sections/business-grid";
+import Footer from "@/components/footer";
+import HeroSlider from "@/components/hero-slider";
 
 export default function Home() {
-  const [isDark, setIsDark] = useState(false)
+  const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
-    const root = document.documentElement
+    const root = document.documentElement;
     if (isDark) {
-      root.classList.add("dark")
+      root.classList.add("dark");
     } else {
-      root.classList.remove("dark")
+      root.classList.remove("dark");
     }
-  }, [isDark])
+  }, [isDark]);
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -30,11 +30,10 @@ export default function Home() {
         <OfferSection />
         {/* <HeroSection />
         <VideoSection /> */}
-        
-        <AboutSection />
-        <BusinessGrid />
+        <section id="tentang-kami">{<AboutSection />}</section>
+        <section id="grup-usaha">{<BusinessGrid />}</section>
       </main>
       <Footer />
     </div>
-  )
+  );
 }
